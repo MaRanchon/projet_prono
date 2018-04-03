@@ -8,3 +8,5 @@
 - [ ] Saisie des nouveaux matchs (admin)
 - [ ] Calcul des points : 3 points pour équipe gagnante + score; 1 point pour équipe gagnante
 - [ ] Faire le mock-up des pages
+- [ ] Gérer le responsive
+- [ ] définir l'agencement du site
