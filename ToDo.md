@@ -1,0 +1,10 @@
+- [ ] Désigner les bibliothèques et frameworks utilisés (front et back)
+- [ ] Connexion/Inscription
+- [ ] Liste des matchs
+- [ ] Saisie des pronostiques
+- [ ] Consultation classement
+- [ ] Verrouillage des matchs (admin)
+- [ ] Saisie des résultats réels (admin)
+- [ ] Saisie des nouveaux matchs (admin)
+- [ ] Calcul des points : 3 points pour équipe gagnante + score; 1 point pour équipe gagnante
+- [ ] Faire le mock-up des pages
