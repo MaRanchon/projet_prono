@@ -22,9 +22,11 @@ class PronosticController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $pronostic = Pronostic::create($request->all());
+
+        return response()->json($pronostic, 201);
     }
 
     /**
@@ -67,9 +69,11 @@ class PronosticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Pronostic $pronostic)
     {
-        //
+        $pronostic->delete();
+
+        return response()->json(null, 204);
     }
 
     /**

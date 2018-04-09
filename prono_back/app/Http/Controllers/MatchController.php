@@ -22,9 +22,11 @@ class MatchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $match = Match::create($request->all());
+
+        return response()->json($match, 201);
     }
 
     /**
@@ -67,9 +69,11 @@ class MatchController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Match $match)
     {
-        //
+        $match->update($request->all());
+
+        return response()->json($match, 200);
     }
 
     /**
