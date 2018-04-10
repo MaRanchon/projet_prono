@@ -1,0 +1,27 @@
+.container{
+  padding-top: 100px;
+
+
+
+}
+
+
+h1{
+  text-align: center;
+  font-family: -apple-system;
+  padding-top: 100px;
+}
+
+.card{
+  margin-top: 150px;
+  margin-left: 80px;
+
+
+}
+
+img{
+  width: 160px;
+  height: 200px;
+  margin-left: 60px;
+
+}

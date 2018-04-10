@@ -1,29 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <header>
-  <h1><strong>
+  <h1>
     {{ title }}
-  </strong>
+
   </h1>
 
-  <div id="nav_wrapper">
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Pronostic</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Classement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Liste Matchs</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Match unique</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Admin</a>
+        </li>
 
 
 
-    </ul>
 
 
-  </div>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
 
+        <button type="button" class="btn btn-primary btn-sm">S'inscrire</button>
+        <button type="button" class="btn btn-secondary btn-sm">Se connecter</button>
+      </form>
+    </div>
+  </nav>
+
+</header>
 <div class="container">
 
   <app-connection></app-connection>
   <app-inscription></app-inscription>
+  <app-classement></app-classement>
+  <app-profil></app-profil>
+  <app-match></app-match>
+  <app-listes></app-listes>
+  <app-admin></app-admin>
 
 
 </div>
