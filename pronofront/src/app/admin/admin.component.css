@@ -1,5 +1,56 @@
 h1{
   text-align: center;
   font-family: -apple-system;
-  padding-top: 100px;
+  margin-top: 100px;
+}
+
+.container{
+  margin-top: 100px;
+
+
+}
+
+.card1{
+
+  height: 400px;
+  margin-top: 100px;
+  width: 280px;
+  display: inline-block;
+  margin-left: 25px;
+  background-image: url("../../assets/cut1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%, 500px;
+}
+
+.card2{
+
+  height: 400px;
+  margin-top: 100px;
+  width: 280px;
+  display: inline-block;
+  margin-left: 25px;
+  background-image: url("../../assets/cut2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%, 500px;
+}
+
+.card3{
+
+  height: 400px;
+  margin-top: 100px;
+  width: 280px;
+  display: inline-block;
+  margin-left: 25px;
+  background-image: url("../../assets/cut3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%, 500px;
+
+}
+
+
+button{
+  margin-left: 30%;
+  margin-top: 90%;
+  color: white;
+  border: 1px solid white;
 }

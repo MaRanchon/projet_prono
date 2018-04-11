@@ -10,6 +10,8 @@ import { ProfilComponent } from './profil/profil.component';
 import { MatchComponent } from './match/match.component';
 import { ListesComponent } from './listes/listes.component';
 import { AdminComponent } from './admin/admin.component';
+import { NewComponent } from './new/new.component';
+import { ResultatsComponent } from './resultats/resultats.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { AdminComponent } from './admin/admin.component';
     ProfilComponent,
     MatchComponent,
     ListesComponent,
-    AdminComponent
+    AdminComponent,
+    NewComponent,
+    ResultatsComponent
   ],
   imports: [
     BrowserModule
