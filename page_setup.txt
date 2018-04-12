@@ -1,0 +1,88 @@
+pages :
+
+connexion/inscription
+page de liste des amtchs
+page de classement des utilisateurs (lien vers profil)
+page de match unique ==> Si pas de prono en cours, formulaire de prono ; Si prono en cours ==> formlaire de modification du prono
+page profil utilisateur avec liste des pronos
+Page admin
+Page saisie des résultats
+
+
+
+
+
+Page de connexion :
+
+Cherche dans la base de donnée si utilisateur correspond. Se servir du tuto laravel
+
+
+Page d'inscription :
+
+Insert dans la base de données. Se servir du tuto Laravel
+
+
+Page de profil : 
+
+Affiche le nom de l'utilisateur et son nombre de points.
+Affiche les pronos de l'utilisateur, et seulement ceux qu'il a déjà fait.
+Si les matchs sont clos, afficher le nombre de points gagnés par l'utilisateur pour ce match.
+
+
+Page de classement :
+
+Récupère la liste des utilisateurs et les trie selon leur nombre de points
+Affiche utilisateurs et leurs points
+Cliquer sur un user renvoie sur son profil
+
+
+
+
+Page de lsite des matchs :
+
+Récupère les matchs dans la BDD et les affiche.
+Triés selon leur groupe
+Cliquer sur un match renvoie sur la page du match
+
+
+Page de match unique :
+
+Affiche les deux équipes en grand.
+Si l'utilisateur connecté n'a pas de prono en cours pour ce match : afficher un formulaire de prono ==> Deux champs qui doivent contenir des nombres, et un bouton submit
+Quand Bouton submit pressé : regarde quelle équipe a le plus haut score et la place dans la colonne "equipe gagnante" de la bdd
+Si utilisateur a déjà mit un prono : formulaire de modification. Le même qu'au-dessus
+SI ADMIN : Bouton verrouillage de match. Quand ce bouton est pressé : plus aucun prono ne peut être rentré ou modifié pour ce match. Rentre valeur dans colonne "verouillage" de BDD
+Si ADMIN : Bouton Saisie des résultats ==> renvoie vers la page de saisie des résultats
+
+
+Page saisie des résultats :
+
+Globalement même page que la saisie des pronos.
+Quand bouton submit appuyé : insert dans la BDD le score réel,
+puis boucle sur tous les utilisateurs : 
+    -va comparer deux valeurs entre les pronos et la BDD : l'équipe gagnante et le score
+    -Si rien ne correspond : 0 points en plus pour l'utilisateur
+    -Si Equipe gagnante correspond : 1 pt en +
+    -Si Deux valeurs sont correctes : 3 pt en +
+    -Inserer les points dans la BDD.
+
+
+Page de Saisie des  nouveaux matchs :
+
+Formulaire de création de matchs avec trois champs :
+-Un seul visible au début : le choix du groupe. Selectbox de A à G
+-Deux autres selectbox avec les la liste des équipes qui correspondent à la lettre
+-Un bouton submit pour insérer dans la BDD
+
+
+
+Page admin :
+
+Trois onglets :
+
+-Onglet Verrouillage de match ==> Renvoie sur la lsite des matchs. 
+-Onglet Saisie des résultats ==> Renvoie sur la liste des matchs
+-Onglet Saisie des nouveaux matchs ==> Page de saisie des matchs
+
+
+

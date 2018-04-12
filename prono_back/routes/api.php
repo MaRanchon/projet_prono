@@ -17,22 +17,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('equipes', 'EquipeController@index');
-Route::get('equipes/{equipe}', 'EquipeController@show');
-Route::post('equipes', 'EquipeController@create');
-Route::put('equipes/{equipe}', 'EquipeController@update'); // Not Working
-Route::delete('equipes/{equipe}', 'EquipeController@delete');
+Route::get('equipes', 'EquipeController@index')->middleware('cors');
+Route::get('equipes/{equipe}', 'EquipeController@show')->middleware('cors');
+Route::post('equipes', 'EquipeController@create')->middleware('cors');
+Route::put('equipes/{equipe}', 'EquipeController@update')->middleware('cors');
+Route::delete('equipes/{equipe}', 'EquipeController@delete')->middleware('cors');
 
 
-Route::get('matches', 'MatchController@index');
-Route::get('matches/{match}', 'MatchController@show');
-Route::delete('matches/{match}', 'MatchController@delete');
-Route::post('matches', 'MatchController@create');
-Route::put('matches/{match}', 'MatchController@update');
+Route::get('matches', 'MatchController@index')->middleware('cors');
+Route::get('matches/{match}', 'MatchController@show')->middleware('cors');
+Route::delete('matches/{match}', 'MatchController@delete')->middleware('cors');
+Route::post('matches', 'MatchController@create')->middleware('cors');
+Route::put('matches/{match}', 'MatchController@update')->middleware('cors');
 
 
-Route::get('pronostics', 'PronosticController@index');
-Route::get('pronostics/{pronostic}', 'PronosticController@show');
-Route::delete('pronostics/{pronostic}', 'PronosticController@delete');
-Route::post('pronostics', 'PronosticController@create');
-Route::put('pronostics/{pronostic}', 'PronosticController@update');
+Route::get('pronostics', 'PronosticController@index')->middleware('cors');
+Route::get('pronostics/{pronostic}', 'PronosticController@show')->middleware('cors');
+Route::delete('pronostics/{pronostic}', 'PronosticController@delete')->middleware('cors');
+Route::post('pronostics', 'PronosticController@create')->middleware('cors');
+Route::put('pronostics/{pronostic}', 'PronosticController@update')->middleware('cors');
