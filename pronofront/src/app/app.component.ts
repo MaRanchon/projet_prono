@@ -17,6 +17,7 @@ export class AppComponent implements OnInit{
   public pronostics;
 
   public team_Nom;
+  public team_pool;
 
   public team_unique;
 

@@ -1,4 +1,4 @@
-
+<h2> Les équipes </h2>
 <ul>
   <li *ngFor="let team of teams">
     <input type="text" name="team.Nom" [(ngModel)]="team.Nom">
@@ -6,14 +6,26 @@
     <button (click)="deleteTeam(team)">Supprimer</button>
   </li>
 </ul>
-<p>Créer une nouvelle équipe: <input type="text" name="team_Nom" [(ngModel)]="team_Nom"><button (click)="createTeam(team_Nom)">Sauvegarder</button> </p>
+<p>Créer une nouvelle équipe:
+  <input type="text" name="team_Nom" [(ngModel)]="team_Nom">
+  <button (click)="createTeam(team_Nom)">Sauvegarder</button>
+</p>
 
+<select [(ngModel)]="id">
+  <option *ngFor="let team of teams" value="{{team.id}}">{{team.id}}</option>
+</select>
+<button (click)="getTeam(id)">Go</button>
+<p *ngIf="team_unique"> L'équipe avec l'id {{id}} est : <b>{{team_unique.Nom}}</b></p>
+
+
+<h2> Les matchs </h2>
 <ul>
   <li *ngFor="let match of matches">
-    {{match.equipe1}} vs {{match.equipe2}}
+    {{match.nomEquipe1}} vs {{match.nomEquipe2}}
   </li>
 </ul>
 
+<h2> Les pronostics </h2>
 <ul>
   <li *ngFor="let pronostic of pronostics">
     {{pronostic.scoreEquipe1}} - {{pronostic.scoreEquipe2}}
@@ -21,8 +33,3 @@
 </ul>
 
 
-<select [(ngModel)]="id">
-  <option *ngFor="let team of teams" value="{{team.id}}">{{team.id}}</option>
-</select>
-<button (click)="getTeam(id)">Go</button>
-<p *ngIf="team_unique">{{team_unique.Nom}}</p>
