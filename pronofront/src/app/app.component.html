@@ -1,31 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<header>
-  <h1><strong>
-    {{ title }}
-  </strong>
-  </h1>
 
-  <div id="nav_wrapper">
-    <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
-      <li><a href="">Home</a></li>
+<ul>
+  <li *ngFor="let team of teams">
+    <input type="text" name="team.Nom" [(ngModel)]="team.Nom">
+    <button (click)="updateTeam(team)">Modifier</button>
+    <button (click)="deleteTeam(team)">Supprimer</button>
+  </li>
+</ul>
+<p>Créer une nouvelle équipe: <input type="text" name="team_Nom" [(ngModel)]="team_Nom"><button (click)="createTeam(team_Nom)">Sauvegarder</button> </p>
 
+<ul>
+  <li *ngFor="let match of matches">
+    {{match.equipe1}} vs {{match.equipe2}}
+  </li>
+</ul>
 
-
-    </ul>
-
-
-  </div>
-
-<div class="container">
-
-  <app-connection></app-connection>
-  <app-inscription></app-inscription>
+<ul>
+  <li *ngFor="let pronostic of pronostics">
+    {{pronostic.scoreEquipe1}} - {{pronostic.scoreEquipe2}}
+  </li>
+</ul>
 
 
-</div>
-
-<footer></footer>
+<select [(ngModel)]="id">
+  <option *ngFor="let team of teams" value="{{team.id}}">{{team.id}}</option>
+</select>
+<button (click)="getTeam(id)">Go</button>
+<p *ngIf="team_unique">{{team_unique.Nom}}</p>
