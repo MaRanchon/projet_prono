@@ -17,9 +17,10 @@ export class AppComponent implements OnInit{
   public pronostics;
 
   public team_Nom;
-  public team_pool;
 
   public team_unique;
+
+  public match_unique;
 
 
 
@@ -29,7 +30,6 @@ export class AppComponent implements OnInit{
     this.getTeams();
     this.getMatches();
     this.getPronostics();
-    /*this.getTeam(6);*/
   }
 
   getTeams() {
@@ -45,14 +45,6 @@ export class AppComponent implements OnInit{
       data => {this.team_unique = data},
       err => console.log(err),
       () => console.log('done loading team : ' + this.team_unique.Nom)
-    );
-  }
-
-  getMatches() {
-    this.matchService.getMatches().subscribe(
-      data => {this.matches = data},
-      err => console.log(err),
-      () => console.log('done loading matches')
     );
   }
 
@@ -108,8 +100,21 @@ export class AppComponent implements OnInit{
     );
    }
 
+  getMatches() {
+    this.matchService.getMatches().subscribe(
+      data => {this.matches = data},
+      err => console.log(err),
+      () => console.log('done loading matches')
+    );
+  }
 
-
+  getMatch(id) {
+    this.matchService.getMatch(id).subscribe(
+      data => {this.match_unique = data},
+      err => console.log(err),
+      () => console.log(`done loading match : ${this.match_unique.nomEquipe1} vs ${this.match_unique.nomEquipe2}`)
+    );
+  }
 
 
 

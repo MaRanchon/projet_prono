@@ -13,5 +13,3 @@ class Cors {
             ->header('Access-Control-Allow-Headers', 'Content-type');
     }
 }
-
-//Access-Control-Request-Headers:content-type

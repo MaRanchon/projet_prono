@@ -7,11 +7,19 @@ const HttpOptions = {
   headers: new HttpHeaders({'Content-type': 'application/json'})
 };
 
+const baseURL = HttpClientHelper.baseURL;
+
 @Injectable()
 export class MatchService {
   constructor(private http: HttpClient) {}
 
   getMatches() {
-    return this.http.get(`${HttpClientHelper.baseURL}/api/matches`);
+    return this.http.get(`${baseURL}/api/matches`);
   }
+
+  getMatch(id) {
+    return this.http.get(`${baseURL}/api/matches/` + id);
+  }
+
+
 }
