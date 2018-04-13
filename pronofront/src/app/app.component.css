@@ -1,12 +1,7 @@
 header{
   width: 100%;
-<<<<<<< fe4c120d1a2d6f228f3afeac0770e3b84977c4df
   height: 620px;
   background-image: url("../assets/2.jpg");
-=======
-  height: 500px;
-  background-image: url("../2.jpg");
->>>>>>> full communication angular/API
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%, 500px;
