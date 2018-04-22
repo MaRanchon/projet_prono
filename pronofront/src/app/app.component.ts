@@ -21,7 +21,14 @@ export class AppComponent implements OnInit{
   public team_unique;
 
   public match_unique;
+  public match_nomEquipe1;
+  public match_nomEquipe2;
 
+  public pronostic_unique;
+
+  public pronostic_score1;
+  public pronostic_score2;
+  public pronostic_idMatch;
 
 
   constructor(private equipeService: EquipeService, private matchService: MatchService, private pronosticService: PronosticService) {}
@@ -45,16 +52,6 @@ export class AppComponent implements OnInit{
       data => {this.team_unique = data},
       err => console.log(err),
       () => console.log('done loading team : ' + this.team_unique.Nom)
-    );
-  }
-
-  getPronostics() {
-    this.pronosticService.getPronostics().subscribe(
-      data => {
-        this.pronostics = data
-      },
-      err => console.log(err),
-      () => console.log('done loading pronostics')
     );
   }
 
@@ -100,6 +97,9 @@ export class AppComponent implements OnInit{
     );
    }
 
+
+
+
   getMatches() {
     this.matchService.getMatches().subscribe(
       data => {this.matches = data},
@@ -113,6 +113,104 @@ export class AppComponent implements OnInit{
       data => {this.match_unique = data},
       err => console.log(err),
       () => console.log(`done loading match : ${this.match_unique.nomEquipe1} vs ${this.match_unique.nomEquipe2}`)
+    );
+  }
+
+  createMatch(nomEquipe1, nomEquipe2) {
+    let match = {
+      nomEquipe1 : nomEquipe1,
+      nomEquipe2 : nomEquipe2
+    };
+    this.matchService.createMatch(match).subscribe(
+      data => {
+        this.getMatches();
+        return true;
+      },
+      err => {
+        console.log("Une erreur s'est produite");
+        return Observable.throw(err)
+      }
+    );
+  }
+
+  deleteMatch(match) {
+    if (confirm("Voulez-vous supprimer ce match ?")) {
+      this.matchService.deleteMatch(match).subscribe(
+        data => {
+          this.getMatches();
+          return true;
+        },
+        err => {
+          console.log("Une erreur est survenue");
+          return Observable.throw(err);
+        }
+      );
+    }
+  }
+
+  updateMatch(match) {
+    this.matchService.updateMatch(match).subscribe(
+      data => {
+        this.getMatches();
+        return true;
+      },
+      err => {
+        console.log("Une erreur s'est produite");
+        return Observable.throw(err);
+      }
+    );
+  }
+
+
+
+  getPronostics() {
+    this.pronosticService.getPronostics().subscribe(
+      data => {
+        this.pronostics = data
+      },
+      err => console.log(err),
+      () => console.log('done loading pronostics')
+    );
+  }
+
+  getPronostic(id) {
+    this.pronosticService.getPronostic(id).subscribe(
+      data => {this.pronostic_unique = data},
+      err => console.log(err),
+      () => console.log('done loading pronostic')
+    );
+  }
+
+  createPronostic(idMatch, scoreEquipe1, scoreEquipe2) {
+    let pronostic = {
+      idMatch : idMatch,
+      scoreEquipe1 : scoreEquipe1,
+      scoreEquipe2 : scoreEquipe2
+    };
+    this.pronosticService.createPronostic(pronostic).subscribe(
+      data => {
+        this.getPronostics();
+        return true;
+      },
+      err => {
+        console.log("Une erreur est survenue");
+        return Observable.throw(err);
+      }
+
+    );
+
+  }
+
+  updatePronostic(pronostic) {
+    this.pronosticService.updatePronostic(pronostic).subscribe(
+      data => {
+        this.getPronostics();
+        return true;
+      },
+      err => {
+        console.log("une erreur est survenue");
+        return Observable.throw(err);
+      }
     );
   }
 

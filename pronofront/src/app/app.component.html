@@ -11,35 +11,77 @@
   <button (click)="createTeam(team_Nom)">Sauvegarder</button>
 </p>
 
+<p>Rechercher une équipe :
 <select [(ngModel)]="team_id">
   <option *ngFor="let team of teams" value="{{team.id}}">{{team.id}}</option>
 </select>
-<button (click)="getTeam(team_id)">Go</button>
-<p *ngIf="team_unique"> L'équipe avec l'id {{team_unique.id}} est : <b>{{team_unique.Nom}}</b></p>
+<button (click)="getTeam(team_id)">Go</button><br>
+  <span *ngIf="team_unique"> L'équipe avec l'id {{team_unique.id}} est : <b>{{team_unique.Nom}}</b></span></p>
 
 
 <h2> Les matchs </h2>
 <ul>
   <li *ngFor="let match of matches">
-    {{match.nomEquipe1}} vs {{match.nomEquipe2}}
+    <input type="text" name="match_modif_1" [(ngModel)]="match.nomEquipe1">
+     vs
+    <input type="text" name="match_modif_2" [(ngModel)]="match.nomEquipe2">
+    <button (click)="updateMatch(match)">Modifier</button>
+    <button (click)="deleteMatch(match)">Supprimer</button>
   </li>
 </ul>
 
+<p>
+  Créer un nouveau match :
+  <select [(ngModel)]="match_nomEquipe1">
+    <option *ngFor="let team of teams" value="{{team.Nom}}">{{team.Nom}}</option>
+  </select>
+  <select [(ngModel)]="match_nomEquipe2">
+    <option *ngFor="let team of teams" value="{{team.Nom}}">{{team.Nom}}</option>
+  </select>
+  <button *ngIf="match_nomEquipe1 && match_nomEquipe2" (click)="createMatch(match_nomEquipe1, match_nomEquipe2)">Sauvegarder</button>
+</p>
+
+<p>Rechercher un match :
 <select [(ngModel)]="match_id">
   <option *ngFor="let match of matches" value="{{match.id}}">
     {{match.id}}
   </option>
 </select>
-<button (click)="getMatch(match_id)">Go</button>
-<p *ngIf="match_unique">
+<button (click)="getMatch(match_id)">Go</button><br>
+<span *ngIf="match_unique">
   Le match avec l'id {{match_unique.id}} est: <b>{{match_unique.nomEquipe1}} vs {{match_unique.nomEquipe2}}</b>
-</p>
+</span></p>
 
 <h2> Les pronostics </h2>
 <ul>
   <li *ngFor="let pronostic of pronostics">
-    {{pronostic.scoreEquipe1}} - {{pronostic.scoreEquipe2}}
+    <input type="text" name="pronostic_scoreEquipe1" [(ngModel)]="pronostic.scoreEquipe1">
+    <input type="text" name="pronostic_scoreEquipe2" [(ngModel)]="pronostic.scoreEquipe2">
+    <button (click)="updatePronostic(pronostic)">Modifier</button>
   </li>
+
 </ul>
 
+<p> Rechercher un pronostic :
+<select [(ngModel)]="pronostic_id">
+  <option *ngFor="let pronostic of pronostics" value="{{pronostic.id}}">
+    {{pronostic.id}}
+  </option>
+</select>
+<button (click)="getPronostic(pronostic_id)">Go</button><br>
+<span *ngIf="pronostic_unique">
+  Le pronostic avec l'id {{pronostic_unique.id}} est : <b>{{pronostic_unique.scoreEquipe1}} - {{pronostic_unique.scoreEquipe2}}</b>
+</span></p>
+
+<p>
+  Créer un nouveau pronostic :
+  <select [(ngModel)]="pronostic_idMatch">
+    <option *ngFor="let match of matches" value="{{match.id}}">
+      {{match.nomEquipe1}} vs {{match.nomEquipe2}}
+    </option>
+  </select>
+  <input type="text" name="pronostic_score1" [(ngModel)]="pronostic_score1">
+  <input type="text" name="pronostic_score2" [(ngModel)]="pronostic_score2">
+  <button *ngIf="pronostic_idMatch && pronostic_score1 && pronostic_score2" (click)="createPronostic(pronostic_idMatch, pronostic_score1, pronostic_score2)">Sauvegarder</button>
+</p>
 

@@ -21,5 +21,19 @@ export class MatchService {
     return this.http.get(`${baseURL}/api/matches/` + id);
   }
 
+  createMatch(match) {
+    let body = JSON.stringify(match);
+    return this.http.post(`${baseURL}/api/matches`, body, HttpOptions);
+  }
+
+  deleteMatch(match) {
+    return this.http.delete(`${baseURL}/api/matches/` + match.id);
+  }
+
+  updateMatch(match) {
+    let body = JSON.stringify(match);
+    return this.http.put(`${baseURL}/api/matches/` + match.id, body, HttpOptions);
+  }
+
 
 }
