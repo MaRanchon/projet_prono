@@ -6,6 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classement.component.css']
 })
 export class ClassementComponent implements OnInit {
+  public equipes = [
+    "Serdaigle",
+    "Serpentard",
+    "Gryffondor",
+    "Poufsouffle",
+    "Wakanda",
+    "France",
+    "Moswick",
+    "Psg",
+    "OM",
+    "Barcelone"
+
+  ]
 
   constructor() { }
 
