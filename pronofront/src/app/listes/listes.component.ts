@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatchService} from "../match.service";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-listes',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListesComponent implements OnInit {
 
-  constructor() { }
+  public matches;
+
+  constructor(private matchService : MatchService) { }
 
   ngOnInit() {
+    this.getMatches();
+  }
+
+  getMatches() {
+    this.matchService.getMatches().subscribe(
+      data => this.matches = data,
+      err => console.log(err),
+      () => console.log('done loading matches')
+    );
   }
 
 }
