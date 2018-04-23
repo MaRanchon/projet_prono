@@ -12,6 +12,7 @@ import { ListesComponent } from './listes/listes.component';
 import { AdminComponent } from './admin/admin.component';
 import { NewComponent } from './new/new.component';
 import { ResultatsComponent } from './resultats/resultats.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ResultatsComponent } from './resultats/resultats.component';
     ResultatsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
