@@ -5,23 +5,22 @@
   <div class="col-sm-6">
     <div class="card">
       <img src="../assets/serdaigle.png">
-
+      <button type="button" class="btn btn-outline-info" (click)="augm1()"> {{count1}} Pts</button>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <img src="../assets/gryffondor.png">
-
+      <button type="button" class="btn btn-outline-danger" (click)="augm2()"> {{count2}} Pts</button>
     </div>
   </div>
 </div>
 
- <button type="button" class="btn btn-outline-dark" (click)="augm1()"> {{count1}} Pts</button>
-<button type="button" class="btn btn-outline-dark" (click)="augm2()"> {{count2}} Pts</button>
 
 
 
-<button type="button" class="btn btn-outline-dark" (click)="createPronostic(count1, count2)">Submit</button>
+
+<button type="button" id="submit" class="btn btn-outline-dark" (click)="createPronostic(count1, count2)">Submit</button>
 
 
 <br/>

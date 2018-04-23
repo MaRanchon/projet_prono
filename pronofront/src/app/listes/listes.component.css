@@ -20,12 +20,13 @@ p{
 
 .first{
   color: red!important;
-
+  text-decoration: none;
 
 }
 
 ul{
   padding-top: 100px;
+
 
 
 }

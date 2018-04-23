@@ -10,7 +10,7 @@ import {PronosticService} from "./pronostic.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'Pronostic';
+  title = 'PronoSport';
 
   public teams;
   public matches;

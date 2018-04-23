@@ -2,13 +2,16 @@
 
 
 
-<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
 <div class="list-group">
-  <a *ngFor="let profil of profils" href="#" class="list-group-item list-group-item-action">{{profil}}</a>
+  <a *ngFor="let profil of profils" href="#" class="list-group-item list-group-item-action">{{profil}}
+    <img src="../assets/user.png" routerLink="/profil">
+  </a>
 
   </div>
 
 
-
+<br/>
+<br/>
+<br/>
 

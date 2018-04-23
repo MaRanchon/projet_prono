@@ -37,3 +37,10 @@ input{
   margin-left: 250px;
 
 }
+
+img{
+  float: right;
+  width: 35px;
+  height: 50px;
+
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MatchService} from "../match.service";
 
 @Component({
   selector: 'app-profil',

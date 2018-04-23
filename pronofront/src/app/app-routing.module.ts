@@ -19,8 +19,8 @@ const routes: Routes = [
     { path : 'match', component : MatchComponent},
     { path : 'new', component : NewComponent},
     { path : 'profil', component : ProfilComponent},
-    { path : 'resultats', component : ResultatsComponent},
-    { path : '', redirectTo : '/connection', pathMatch : 'full'}
+    { path : 'resultats', component : ResultatsComponent}
+
 ];
 
 @NgModule({
