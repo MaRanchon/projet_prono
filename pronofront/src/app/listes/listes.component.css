@@ -5,9 +5,15 @@ h1{
 
 }
 
-#list{
+.list-group{
   padding-top: 100px;
+  width: 700px;
+  margin-left: 23%;
 
 
+}
 
+p{
+  text-align: center;
+  font-family: -apple-system;
 }

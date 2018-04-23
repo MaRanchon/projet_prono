@@ -6,17 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classement.component.css']
 })
 export class ClassementComponent implements OnInit {
-  public equipes = [
-    "Serdaigle",
-    "Serpentard",
-    "Gryffondor",
-    "Poufsouffle",
-    "Wakanda",
-    "France",
-    "Moswick",
-    "Psg",
-    "OM",
-    "Barcelone"
+  public profils = [
+    "toto1",
+    "marc4",
+    "elise18",
+    "admin84",
+    "visojzojezo",
+    "dzdsdsf",
+    "Mcve",
+    "kronenbourg2500",
+    "lili80",
+
 
   ]
 
