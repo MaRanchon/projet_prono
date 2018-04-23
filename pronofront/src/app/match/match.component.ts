@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PronosticService} from "../pronostic.service";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-match',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class MatchComponent implements OnInit {
   public count1 = 0;
   public count2 = 0;
-  constructor() { }
+  constructor(private pronosticService : PronosticService) { }
 
   ngOnInit() {
   }
@@ -20,6 +22,8 @@ export class MatchComponent implements OnInit {
   augm2(){
     this.count2+=1;
   }
+  
+
 
 }
 
