@@ -214,6 +214,21 @@ export class AppComponent implements OnInit{
     );
   }
 
+  deletePronostic(pronostic) {
+    if(confirm("Etes-vous sûr de  vouloir supprimer ce pronostic ?")) {
+      this.pronosticService.deletePronostic(pronostic).subscribe(
+        data => {
+          this.getPronostics();
+          return true;
+        },
+        err => {
+          console.log("une erreur est survenue");
+          return Observable.throw(err);
+        }
+      );
+    }
+  }
+
 
 
 
