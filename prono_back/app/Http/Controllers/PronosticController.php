@@ -69,11 +69,11 @@ class PronosticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Pronostic $pronostic)
+    public function update(Request $request, Pronostic $pronostic)
     {
-        $pronostic->delete();
+        $pronostic->update($request->all());
 
-        return response()->json(null, 204);
+        return response()->json($pronostic, 200);
     }
 
     /**
