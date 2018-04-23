@@ -1,9 +1,9 @@
 <h1>Listes des Matchs</h1>
 
-
+<!--
 
 <div class="list-group">
-  <!--<a *ngFor="let match of matchs" href="#" class="list-group-item list-group-item-action"><strong><p>{{match}}</p></strong></a>
+  <a *ngFor="let match of matchs" href="#" class="list-group-item list-group-item-action"><strong><p>{{match}}</p></strong></a>
 -->
 
 <!--
@@ -20,10 +20,24 @@
   <a class="list-group-item list-group-item-action" href="#list-item-2">Item2</a>
   <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
   <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
->>>>>>> dd4b448a97b2d8024cc34e87263050e72e779511
 </div>
 -->
 
+<!--
+  <a *ngFor="let match of matches" class="list-group-item list-group-item-action"><strong><p>{{match.nomEquipe1}} vs {{match.nomEquipe2}}</p></strong></a>
+-->
+
+
+
+
 <ul>
-  <li *ngFor="let match of matches">{{match.nomEquipe1}} vs {{match.nomEquipe2}}</li>
+  <li *ngFor="let match of matches; first as isFirst" class="list-group-item list-group-item-action">
+  <a *ngIf="isFirst" class="first" routerLink="/match"><strong><p>{{match.nomEquipe1}} vs {{match.nomEquipe2}}</p></strong></a>
+  <span *ngIf="!isFirst"><strong><p>{{match.nomEquipe1}} vs {{match.nomEquipe2}}</p></strong></span>
+
+  </li>
+
+
+
+
 </ul>
