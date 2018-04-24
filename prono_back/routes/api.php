@@ -36,3 +36,9 @@ Route::get('pronostics/{pronostic}', 'PronosticController@show')->middleware('co
 Route::delete('pronostics/{pronostic}', 'PronosticController@delete')->middleware('cors');
 Route::post('pronostics', 'PronosticController@create')->middleware('cors');
 Route::put('pronostics/{pronostic}', 'PronosticController@update')->middleware('cors');
+
+Route::get('users', 'UserController@index')->middleware('cors');
+Route::get('users/{user}', 'UserController@show')->middleware('cors');
+Route::post('users', 'UserController@create')->middleware('cors');
+Route::put('users/{user}', 'UserController@update')->middleware('cors');
+Route::delete('users/{user}', 'UserController@delete')->middleware('cors');
