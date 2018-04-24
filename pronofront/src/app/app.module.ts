@@ -5,6 +5,7 @@ import {EquipeService} from "./equipe.service";
 import {MatchService} from "./match.service";
 import {PronosticService} from "./pronostic.service";
 import { FormsModule }    from '@angular/forms';
+import {UserService} from "./user.service";
 
 
 import { AppComponent } from './app.component';
@@ -42,7 +43,8 @@ import { AppRoutingModule } from './/app-routing.module';
   providers: [
     EquipeService,
     MatchService,
-    PronosticService
+    PronosticService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

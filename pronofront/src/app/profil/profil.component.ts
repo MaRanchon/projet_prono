@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {MatchService} from "../match.service";
+import {UserService} from "../user.service";
+import {Observable} from "rxjs/Observable";
+
+
 
 @Component({
   selector: 'app-profil',
@@ -8,9 +11,20 @@ import {MatchService} from "../match.service";
 })
 export class ProfilComponent implements OnInit {
 
-  constructor() { }
+  public user;
+
+  constructor(private userService : UserService) { }
 
   ngOnInit() {
+    this.getUser(1);
+  }
+
+  getUser(id) {
+    this.userService.getUser(1).subscribe(
+      data => {this.user = data},
+      err => console.log(err),
+      () => console.log('done loading user')
+    );
   }
 
 }
